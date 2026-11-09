@@ -1,6 +1,6 @@
 {
-  "name": "Bastaro",
-  "short_name": "Bastaro",
+  "name": "SchoolLime",
+  "short_name": "SchoolLime",
   "description": "School supplies and everyday items online in Pakistan with Cash on Delivery.",
   "start_url": "/",
   "scope": "/",
@@ -8,23 +8,10 @@
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [
-    {
-      "src": "/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    }
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
   ],
   "id": "/",
   "lang": "en",
-  "categories": [
-    "shopping",
-    "education"
-  ]
+  "categories": ["shopping", "education"]
 }
