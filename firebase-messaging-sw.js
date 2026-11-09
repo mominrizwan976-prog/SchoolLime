@@ -1,14 +1,14 @@
-// Bastaro – app helper: lets the website install as an app, opens a saved copy when the internet is off,
+// SchoolLime – app helper: lets the website install as an app, opens a saved copy when the internet is off,
 // and shows phone notifications (Firebase Cloud Messaging web push).
 // Keep this file next to index.html (same folder). Do not rename it.
-var CACHE = 'bastaro-app-v1';
+var CACHE = 'schoollime-app-v5';
 var KEEP = ['/', '/manifest.webmanifest', '/icon-192.png', '/icon-512.png'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(KEEP); }).catch(function () {}).then(function () { return self.skipWaiting(); }));
 });
 self.addEventListener('activate', function (e) {
   e.waitUntil(caches.keys().then(function (ks) {
-    return Promise.all(ks.filter(function (k) { return k.indexOf('bastaro-app-') === 0 && k !== CACHE; }).map(function (k) { return caches.delete(k); }));
+    return Promise.all(ks.filter(function (k) { return k.indexOf('schoollime-app-') === 0 && k !== CACHE; }).map(function (k) { return caches.delete(k); }));
   }).then(function () { return self.clients.claim(); }));
 });
 // Pages: always try the internet first (so the newest website shows); if offline, open the saved copy.
@@ -39,7 +39,7 @@ self.addEventListener('push', function (e) {
     data: { url: d.url || '/' }
   };
   if (d.tag) { opt.tag = d.tag; opt.renotify = true; }
-  e.waitUntil(self.registration.showNotification(d.title || 'Bastaro', opt));
+  e.waitUntil(self.registration.showNotification(d.title || 'SchoolLime', opt));
 });
 
 self.addEventListener('notificationclick', function (e) {
