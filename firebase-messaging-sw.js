@@ -1,7 +1,7 @@
 // SchoolLime – app helper: lets the website install as an app, opens a saved copy when the internet is off,
 // and shows phone notifications (Firebase Cloud Messaging web push).
 // Keep this file next to index.html (same folder). Do not rename it.
-var CACHE = 'schoollime-app-v5';
+var CACHE = 'schoollime-app-v6';
 var KEEP = ['/', '/manifest.webmanifest', '/icon-192.png', '/icon-512.png'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(KEEP); }).catch(function () {}).then(function () { return self.skipWaiting(); }));
